@@ -1,4 +1,4 @@
 abstract class Routes {
-  static const String welcome = '/'; 
-  static const String settings = '/settings'; 
+  static const String welcome = '/';
+  static const String settings = '/settings';
 }
