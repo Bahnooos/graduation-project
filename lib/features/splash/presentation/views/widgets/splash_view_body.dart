@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/routes/routes.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 
@@ -21,12 +22,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       });
     });
 
-    // Future.delayed(Duration(seconds: 2), () {
-    //   Navigator.pushReplacement(
-    //     context,
-    //     MaterialPageRoute(builder: (context) => LoginPage()),
-    //   );
-    // });
+    Future.delayed(Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, Routes.login);
+    });
   }
 
   @override
@@ -58,6 +56,10 @@ class _SplashViewBodyState extends State<SplashViewBody> {
                   style: Styles.interBold40.copyWith(
                     color: AppColor.textWhiteColor,
                   ),
+                ),
+                Text(
+                  '\n',
+                  style: Styles.latoBold12,
                 ),
               ],
             ),
