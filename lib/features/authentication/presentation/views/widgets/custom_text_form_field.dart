@@ -19,17 +19,17 @@ class CustomTextFormField extends StatelessWidget {
             const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(10),
+            Radius.circular(5),
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(10),
+            Radius.circular(5),
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(10),
+            Radius.circular(5),
           ),
         ),
         hintText: hintText,

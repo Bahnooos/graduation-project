@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  font_awesome_flutter: ^10.8.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0

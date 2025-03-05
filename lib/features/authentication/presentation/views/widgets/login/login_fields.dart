@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/labeled_text_form_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/login/forget_password.dart';
 
 class LoginFields extends StatelessWidget {
   const LoginFields({super.key});
@@ -17,6 +18,7 @@ class LoginFields extends StatelessWidget {
           hintText: 'Password',
           label: 'Password',
         ),
+        const ForgetPassword(),
       ],
     );
   }
