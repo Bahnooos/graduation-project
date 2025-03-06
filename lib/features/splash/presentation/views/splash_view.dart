@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/splash/presentation/views/widgets/custom_background.dart';
+import 'package:graduation_project/core/widgets/custom_background.dart';
 import 'package:graduation_project/features/splash/presentation/views/widgets/splash_view_body.dart';
 
 class SplashView extends StatelessWidget {
