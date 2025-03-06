@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColor {
-  static const Color primaryButtonColor = Color(0xff0ACF83);
+  static const Color primaryColor = Color(0xff0ACF83);
   static const Color gmailButtonColor = Color(0xff484848);
   static const Color whiteColor = Colors.white;
   static const Color textBlackColor = Colors.black;
