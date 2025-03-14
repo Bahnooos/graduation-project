@@ -22,7 +22,7 @@ class MasarakApp extends StatelessWidget {
           // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        initialRoute: Routes.welcome,
+        initialRoute: Routes.navigationHome,
         onGenerateRoute: AppRouter().generateRoute,
       ),
     );
