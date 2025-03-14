@@ -31,7 +31,7 @@ class MasarakApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        initialRoute: Routes.settings,
+        initialRoute: Routes.navigationHome,
         onGenerateRoute: AppRouter().generateRoute,
       ),
     );
