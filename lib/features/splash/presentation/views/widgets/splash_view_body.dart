@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/routes/routes.dart';
-import 'package:graduation_project/core/utils/app_color.dart';
-import 'package:graduation_project/core/utils/styles.dart';
+import 'package:graduation_project/core/widgets/app_logo_name.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -40,30 +39,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
             child: child,
           );
         },
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/logo.jpg',
-              height: 100,
-              width: 100,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'asarak',
-                  style: Styles.interBold40.copyWith(
-                    color: AppColor.textWhiteColor,
-                  ),
-                ),
-                Text(
-                  '\n',
-                  style: Styles.latoBold12,
-                ),
-              ],
-            ),
-          ],
+        child: AppLogoName(
+          logoSize: 100,
+          fontSize: 50,
         ),
       ),
     );
