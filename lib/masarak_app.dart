@@ -17,7 +17,7 @@ class MasarakApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,       
         title: 'Masark',
         theme: ThemeData(
           fontFamily: Constants.lato,
