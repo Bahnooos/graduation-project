@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/routes/routes.dart';
-import 'package:graduation_project/core/widgets/app_logo_name.dart';
+import 'package:graduation_project/features/splash/presentation/views/widgets/splash_view_body_content.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -28,22 +28,6 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: TweenAnimationBuilder(
-        tween: Tween<double>(begin: 0.1, end: _scale),
-        duration: Duration(seconds: 1),
-        curve: Curves.easeOut,
-        builder: (context, double scale, child) {
-          return Transform.scale(
-            scale: scale,
-            child: child,
-          );
-        },
-        child: AppLogoName(
-          logoSize: 100,
-          fontSize: 50,
-        ),
-      ),
-    );
+    return SplashViewBodyContent(scale: _scale);
   }
 }

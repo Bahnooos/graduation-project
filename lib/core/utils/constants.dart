@@ -4,6 +4,7 @@ import 'package:graduation_project/features/settings/presentation/views/settings
 
 abstract class Constants {
   static const String lato = 'Lato';
+
   static final List<Widget> pages = [
     SettingsView(),
     Center(child: Text('Statistics')),

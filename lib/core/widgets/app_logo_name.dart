@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
+import 'package:graduation_project/core/utils/assets.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 
 class AppLogoName extends StatelessWidget {
@@ -18,7 +19,7 @@ class AppLogoName extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
-          'assets/images/logo.jpg',
+          Assets.logo,
           height: logoSize,
           width: logoSize,
         ),
