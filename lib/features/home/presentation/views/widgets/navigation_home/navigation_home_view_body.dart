@@ -7,23 +7,7 @@ class NavigationHomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBackground(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
-            ),
-            child: Container(
-              color: Colors.white,
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.8,
-              child: const CustomBottomNavigationBar(),
-            ),
-          ),
-        ],
-      ),
+      body: CustomBottomNavigationBar(),
     );
   }
 }

@@ -24,6 +24,7 @@ class MasarakApp extends StatelessWidget {
           // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
+        initialRoute: Routes.welcome,
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -31,7 +32,6 @@ class MasarakApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        initialRoute: Routes.navigationHome,
         onGenerateRoute: AppRouter().generateRoute,
       ),
     );
