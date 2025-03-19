@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
+import 'package:graduation_project/features/live_tracking/presentation/views/live_tracking_view.dart';
 import 'package:graduation_project/features/settings/presentation/views/settings_view.dart';
 
 abstract class Constants {
@@ -9,7 +10,7 @@ abstract class Constants {
     SettingsView(),
     Center(child: Text('Statistics')),
     HomeView(),
-    Center(child: Text('Live Tracking')),
+    LiveTrackingView(),
     Center(child: Text('History')),
   ];
 }
