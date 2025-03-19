@@ -4,7 +4,8 @@ import 'package:graduation_project/core/widgets/defult_view/custom_default_view_
 
 class CustomDefaultView extends StatelessWidget {
   final Widget body;
-  const CustomDefaultView({super.key, required this.body});
+  final Widget? title;
+  const CustomDefaultView({super.key, required this.body, this.title});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,10 +13,11 @@ class CustomDefaultView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          AppLogoName(
-            logoSize: 70,
-            fontSize: 40,
-          ),
+          title ??
+              AppLogoName(
+                logoSize: 70,
+                fontSize: 40,
+              ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.02,
           ),
