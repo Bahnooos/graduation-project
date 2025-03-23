@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
-import 'package:graduation_project/core/utils/assets.dart';
-import 'package:graduation_project/core/utils/styles.dart';
 import 'package:graduation_project/core/widgets/defult_view/custom_default_view.dart';
-import 'package:graduation_project/features/settings/data/models/setting_profile_model.dart';
-import 'package:graduation_project/features/settings/presentation/views/widgets/account_settings_seaction.dart';
+import 'package:graduation_project/features/settings/presentation/views/widgets/account_settings.dart';
 import 'package:graduation_project/features/settings/presentation/views/widgets/custom_divider.dart';
-import 'package:graduation_project/features/settings/presentation/views/widgets/profile_settings_widget.dart';
+import 'package:graduation_project/features/settings/presentation/views/widgets/custom_title_widget.dart';
+import 'package:graduation_project/features/settings/presentation/views/widgets/more_settings.dart';
+import 'package:graduation_project/features/settings/presentation/views/widgets/profile_header.dart';
 
 class SettingsViewBody extends StatelessWidget {
   const SettingsViewBody({super.key});
@@ -15,19 +14,7 @@ class SettingsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomDefaultView(
-      title: Text.rich(TextSpan(children: [
-        TextSpan(
-          text: 'Set',
-          style: Styles.interBold40.copyWith(
-            color: AppColor.primaryColor,
-          ),
-        ),
-        TextSpan(
-            text: 'tings',
-            style: Styles.interBold40.copyWith(
-              color: AppColor.textWhiteColor,
-            )),
-      ])),
+      title: CustomTitleWidget(),
       body: Card(
         elevation: 12,
         child: Container(
@@ -38,14 +25,11 @@ class SettingsViewBody extends StatelessWidget {
           ),
           child: Column(
             children: [
-              ProfileSettingsWidget(
-                settingsProfileModel: SettingProfileModel(
-                  image: Assets.logo,
-                  name: 'Yennefer Doe',
-                ),
-              ),
+              ProfileHeader(),
               CustomDivider(),
-              AccountSettingsSeaction(),
+              AccountSettings(),
+              CustomDivider(),
+              MoreSettings(),
             ],
           ),
         ),
