@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_button.dart';
+import 'package:graduation_project/core/widgets/custom_button.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
