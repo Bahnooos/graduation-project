@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
-import 'package:graduation_project/core/widgets/defult_view/custom_default_view.dart';
+import 'package:graduation_project/core/widgets/default_view/custom_default_view.dart';
 import 'package:graduation_project/features/settings/presentation/views/widgets/account_settings.dart';
 import 'package:graduation_project/features/settings/presentation/views/widgets/custom_divider.dart';
-import 'package:graduation_project/features/settings/presentation/views/widgets/custom_title_widget.dart';
 import 'package:graduation_project/features/settings/presentation/views/widgets/more_settings.dart';
 import 'package:graduation_project/features/settings/presentation/views/widgets/profile_header.dart';
 
@@ -14,7 +13,8 @@ class SettingsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomDefaultView(
-      title: CustomTitleWidget(),
+      appColorTitle: 'Set',
+      whiteTitle: 'tings',
       body: Card(
         elevation: 12,
         child: Container(
