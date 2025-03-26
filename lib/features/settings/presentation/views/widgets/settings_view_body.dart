@@ -13,8 +13,8 @@ class SettingsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomDefaultView(
-      appColorTitle: 'Se',
-      whiteTitle: 'ttings',
+      appColorTitle: 'Set',
+      whiteTitle: 'tings',
       body: Card(
         elevation: 12,
         child: Container(
