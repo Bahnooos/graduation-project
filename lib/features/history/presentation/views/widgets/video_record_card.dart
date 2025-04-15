@@ -10,7 +10,7 @@ class VideoRecordCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      padding: const EdgeInsets.only(left: 16, top: 12, bottom: 12),
       decoration: BoxDecoration(
         color: AppColor.textFieldColor,
         borderRadius: BorderRadius.circular(5),
