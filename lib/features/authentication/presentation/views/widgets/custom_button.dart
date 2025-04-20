@@ -4,16 +4,18 @@ import 'package:graduation_project/core/utils/styles.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
+  final void Function() onPressed;
   const CustomButton({
     super.key,
     required this.text,
+    required this.onPressed,
   });
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 40.0),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColor.primaryColor,
           shape: RoundedRectangleBorder(

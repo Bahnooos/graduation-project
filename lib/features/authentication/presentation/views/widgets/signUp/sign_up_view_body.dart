@@ -31,6 +31,7 @@ class SignUpViewBody extends StatelessWidget {
                   SignUpFields(),
                   CustomButton(
                     text: 'Signup',
+                    onPressed: () {},
                   ),
                   GoogleButton(text: 'signup'),
                 ],

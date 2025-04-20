@@ -31,6 +31,7 @@ class LoginViewBody extends StatelessWidget {
                   LoginFields(),
                   CustomButton(
                     text: 'Login',
+                    onPressed: () {},
                   ),
                   GoogleButton(text: 'login'),
                 ],
