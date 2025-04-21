@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/routes/app_router.dart';
 import 'package:graduation_project/core/routes/routes.dart';
+import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/constants.dart';
 
 class MasarakApp extends StatelessWidget {
@@ -18,8 +19,12 @@ class MasarakApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Masark',
         theme: ThemeData(
+          textSelectionTheme: TextSelectionThemeData(
+            cursorColor: AppColor.primaryColor,
+            selectionColor: AppColor.primaryColor.withOpacity(0.5),
+            selectionHandleColor: AppColor.primaryColor,
+          ),
           fontFamily: Constants.lato,
-          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
         initialRoute: Routes.welcome,

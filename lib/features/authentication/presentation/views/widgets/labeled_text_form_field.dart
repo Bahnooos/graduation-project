@@ -6,8 +6,15 @@ import 'package:graduation_project/features/authentication/presentation/views/wi
 class LabeledTextFormField extends StatelessWidget {
   final String hintText;
   final String label;
-  const LabeledTextFormField(
-      {super.key, required this.hintText, required this.label});
+  final TextEditingController controller;
+
+  const LabeledTextFormField({
+    super.key,
+    required this.hintText,
+    required this.label,
+    required this.controller,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,7 +27,7 @@ class LabeledTextFormField extends StatelessWidget {
             style: Styles.latoBold14.copyWith(color: AppColor.textWhiteColor),
           ),
           const SizedBox(height: 5),
-          CustomTextFormField(hintText: hintText),
+          CustomTextFormField(hintText: hintText, controller: controller),
         ],
       ),
     );

@@ -3,20 +3,28 @@ import 'package:graduation_project/features/authentication/presentation/views/wi
 import 'package:graduation_project/features/authentication/presentation/views/widgets/login/forget_password.dart';
 
 class LoginFields extends StatelessWidget {
-  const LoginFields({super.key});
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+
+  const LoginFields({
+    super.key,
+    required this.emailController,
+    required this.passwordController,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         LabeledTextFormField(
           hintText: 'Email Address',
           label: 'Email',
+          controller: emailController,
         ),
         LabeledTextFormField(
           hintText: 'Password',
           label: 'Password',
+          controller: passwordController,
         ),
         const ForgetPassword(),
       ],

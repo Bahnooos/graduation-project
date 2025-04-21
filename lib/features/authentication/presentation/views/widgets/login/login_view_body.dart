@@ -8,12 +8,14 @@ import 'package:graduation_project/features/authentication/presentation/views/wi
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 26,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 26),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -28,7 +30,10 @@ class LoginViewBody extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  LoginFields(),
+                  LoginFields(
+                    emailController: emailController,
+                    passwordController: passwordController,
+                  ),
                   CustomButton(
                     text: 'Login',
                     onPressed: () {},
