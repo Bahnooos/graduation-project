@@ -5,17 +5,19 @@ import 'package:graduation_project/core/utils/styles.dart';
 class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
-
+  final String? Function(String?)? validator;
   const CustomTextFormField({
     super.key,
     required this.hintText,
     required this.controller,
+    required this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      validator: validator,
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColor.textFieldColor,

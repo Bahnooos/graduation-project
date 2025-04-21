@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
-import 'package:graduation_project/features/authentication/presentation/views/functions/regestration_functions/regestration_functions.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_wedgets/custom_button.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_wedgets/google_button.dart';
+import 'package:graduation_project/features/authentication/presentation/views/functions/registration_functions/registration_functions.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/custom_button.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/google_button.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/already_have_account.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/sign_up_fields.dart';
 
@@ -19,15 +19,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-
-  @override
-  void dispose() {
-    userNameController.dispose();
-    emailController.dispose();
-    passwordController.dispose();
-    confirmPasswordController.dispose();
-    super.dispose();
-  }
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -52,15 +44,19 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                     emailController: emailController,
                     passwordController: passwordController,
                     confirmPasswordController: confirmPasswordController,
+                    formKey: formKey,
                   ),
                   CustomButton(
                     text: 'Signup',
                     onPressed: () {
-                      registerWithEmail(
-                        context,
-                        emailController.text.trim(),
-                        passwordController.text.trim(),
-                      );
+                      if (formKey.currentState!.validate()) {
+                        formKey.currentState!.save();
+                        registerWithEmail(
+                          context,
+                          emailController.text.trim(),
+                          passwordController.text.trim(),
+                        );
+                      }
                     },
                   ),
                   GoogleButton(text: 'signup'),

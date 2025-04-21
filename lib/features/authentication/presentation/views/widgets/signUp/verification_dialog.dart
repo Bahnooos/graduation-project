@@ -1,6 +1,8 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/authentication/presentation/views/functions/regestration_functions/email_verification_functions.dart';
-import 'package:graduation_project/features/authentication/presentation/views/functions/regestration_functions/show_custom_snack_bar.dart';
+import 'package:graduation_project/features/authentication/presentation/views/functions/registration_functions/email_verification_functions.dart';
+import 'package:graduation_project/features/authentication/presentation/views/functions/registration_functions/show_custom_snack_bar.dart';
 
 class VerificationDialog extends StatelessWidget {
   const VerificationDialog({super.key});

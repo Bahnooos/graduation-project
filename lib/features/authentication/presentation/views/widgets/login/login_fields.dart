@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_wedgets/labeled_text_form_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/labeled_text_form_field.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/login/forget_password.dart';
 
 class LoginFields extends StatelessWidget {
@@ -20,11 +20,13 @@ class LoginFields extends StatelessWidget {
           hintText: 'Email Address',
           label: 'Email',
           controller: emailController,
+          validator: (data) {},
         ),
         LabeledTextFormField(
           hintText: 'Password',
           label: 'Password',
           controller: passwordController,
+          validator: (data) {},
         ),
         const ForgetPassword(),
       ],
