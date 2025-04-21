@@ -14,5 +14,5 @@ abstract class AppColor {
   static const Color editProfileInputColor = Color(0xff544C4C);
   static const Color settingsArrowColor = Color(0xff4B4B4B);
   static const Color settingsDividerColor = Color(0xffCACACA);
-  static const Color settingsColor = Color(0xffADADAD);
+  static const Color errorColor = Color(0xFFF44336);
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/utils/app_color.dart';
 
 void showLoadingOverlay(BuildContext context) {
   showDialog(
@@ -7,7 +8,9 @@ void showLoadingOverlay(BuildContext context) {
     barrierColor: Colors.black.withOpacity(0.3),
     builder: (context) {
       return Center(
-        child: CircularProgressIndicator(),
+        child: CircularProgressIndicator(
+          color: AppColor.primaryColor,
+        ),
       );
     },
   );
