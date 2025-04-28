@@ -82,7 +82,7 @@ class _CustomCameraPreviewState extends State<CustomCameraPreview> {
       );
       result = '';
       recognitions?.forEach((response) {
-        result += response['label'] + ' ' + (response['confidence'] as double).toStringAsFixed(2) + '/n/n';
+        result += response['label'] + ' ' + (response['confidence'] as double).toStringAsFixed(2) + '\n\n';
       });
       setState(() {
         result;
