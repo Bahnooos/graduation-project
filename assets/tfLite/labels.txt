@@ -1,0 +1,7 @@
+Car
+Stop Sign
+Traffic Light
+person
+speed 100
+speed 120
+speed 80

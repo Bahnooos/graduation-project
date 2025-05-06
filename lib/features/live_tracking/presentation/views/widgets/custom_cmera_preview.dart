@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter_vision/flutter_vision.dart';
 
 class CustomCameraPreview extends StatefulWidget {
@@ -23,7 +20,7 @@ class _CustomCameraPreviewState extends State<CustomCameraPreview> {
   @override
   void initState() {
     super.initState();
-  vision = FlutterVision();
+    vision = FlutterVision();
     init();
   }
 
@@ -102,7 +99,7 @@ class _CustomCameraPreviewState extends State<CustomCameraPreview> {
   }
 
   Future<void> loadYoloModel() async {
-    await vision.loadYoloModel(labels: 'assets/tfLite/labels2.txt', modelPath: 'assets/tfLite/best_float32.tflite', modelVersion: "yolov8", numThreads: 2, useGpu: true);
+    await vision.loadYoloModel(labels: 'assets/tfLite/labels.txt', modelPath: 'assets/tfLite/best2_float32.tflite', modelVersion: "yolov8", numThreads: 2, useGpu: true);
     setState(() {
       isLoaded = true;
     });

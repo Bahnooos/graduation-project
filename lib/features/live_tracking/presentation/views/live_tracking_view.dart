@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/core/widgets/default_view/custom_default_view.dart';
 import 'package:graduation_project/features/live_tracking/presentation/views/widgets/live_tracking_view_body.dart';
 
 class LiveTrackingView extends StatelessWidget {
