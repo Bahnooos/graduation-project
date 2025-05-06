@@ -1,15 +1,14 @@
-names:
-- Person
-- bus
-- car
-- green
-- motorbike
-- red
-- speed_060_ar
-- speed_080_ar
-- speed_090_ar
-- speed_100_ar
-- speed_120_ar
-- stop
-- truck
-- yellow
+Person
+bus
+car
+green
+motorbike
+red
+speed_060_ar
+speed_080_ar
+speed_090_ar
+speed_100_ar
+speed_120_ar
+stop
+truck
+yellow

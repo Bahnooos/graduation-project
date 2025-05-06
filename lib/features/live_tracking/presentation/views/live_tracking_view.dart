@@ -6,9 +6,9 @@ class LiveTrackingView extends StatelessWidget {
   const LiveTrackingView({super.key});
   @override
   Widget build(BuildContext context) {
-    return CustomDefaultView(
-      appColorTitle: 'Live ',
-      whiteTitle: 'Tracking',
+    return Scaffold(
+      // appColorTitle: 'Live ',
+      // whiteTitle: 'Tracking',
       body: LiveTrackingViewBody(),
     );
   }

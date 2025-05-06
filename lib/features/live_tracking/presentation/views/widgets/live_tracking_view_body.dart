@@ -15,10 +15,9 @@ class _LiveTrackingViewBodyState extends State<LiveTrackingViewBody> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+       
         children: [
-          CustomCameraPreview(),
+          Expanded(child: CustomCameraPreview()),
           CustomButton(
             text: 'Stop Tracking',
           ),
