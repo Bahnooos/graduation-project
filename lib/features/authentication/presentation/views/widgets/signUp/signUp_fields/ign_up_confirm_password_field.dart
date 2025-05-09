@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/labeled_text_form_field.dart';
 
-class ConfirmPasswordField extends StatelessWidget {
+class SignUPConfirmPasswordField extends StatelessWidget {
   final TextEditingController confirmPasswordController;
   final TextEditingController passwordController;
   final GlobalKey<FormState> formKey;
 
-  const ConfirmPasswordField({
+  const SignUPConfirmPasswordField({
     super.key,
     required this.confirmPasswordController,
     required this.passwordController,

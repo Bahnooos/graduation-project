@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/labeled_text_form_field.dart';
 
-class UsernameField extends StatelessWidget {
+class SignUPUsernameField extends StatelessWidget {
   final TextEditingController userNameController;
-  const UsernameField({
+  const SignUPUsernameField({
     super.key,
     required this.userNameController,
   });

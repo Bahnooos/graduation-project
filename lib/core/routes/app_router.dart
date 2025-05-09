@@ -8,22 +8,23 @@ import 'package:graduation_project/features/splash/presentation/views/splash_vie
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.settings:
-        return MaterialPageRoute(
-          builder: (_) => const SettingsView(),
-        );
       case Routes.welcome:
         return MaterialPageRoute(
           builder: (_) => const SplashView(),
-        );
-      case Routes.login:
-        return MaterialPageRoute(
-          builder: (_) => const LoginView(),
         );
       case Routes.signUp:
         return MaterialPageRoute(
           builder: (_) => const SignUpView(),
         );
+      case Routes.login:
+        return MaterialPageRoute(
+          builder: (_) => const LoginView(),
+        );
+      case Routes.settings:
+        return MaterialPageRoute(
+          builder: (_) => const SettingsView(),
+        );
+
       default:
         return null;
     }

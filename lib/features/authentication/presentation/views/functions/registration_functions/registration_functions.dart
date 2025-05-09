@@ -3,8 +3,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/authentication/presentation/views/functions/registration_functions/email_verification_functions.dart';
-import 'package:graduation_project/features/authentication/presentation/views/functions/registration_functions/loading_overlay.dart';
-import 'package:graduation_project/features/authentication/presentation/views/functions/registration_functions/show_custom_snack_bar.dart';
+import 'package:graduation_project/features/authentication/presentation/views/functions/loading_overlay.dart';
+import 'package:graduation_project/features/authentication/presentation/views/functions/show_custom_snack_bar.dart';
 
 Future<User?> createUser(String email, String password) async {
   UserCredential userCredential = await FirebaseAuth.instance
@@ -12,7 +12,7 @@ Future<User?> createUser(String email, String password) async {
   return userCredential.user;
 }
 
-void handleFirebaseAuthError(BuildContext context, FirebaseAuthException e) {
+void handleRegistrationError(BuildContext context, FirebaseAuthException e) {
   String errorMessage = "There was an error";
   if (e.code == 'email-already-in-use') {
     errorMessage = "The email is already in use";
@@ -46,7 +46,7 @@ Future<void> registerWithEmail(
     }
   } on FirebaseAuthException catch (e) {
     hideLoadingOverlay(context);
-    handleFirebaseAuthError(context, e);
+    handleRegistrationError(context, e);
   } catch (e) {
     hideLoadingOverlay(context);
     showCustomSnackBar(context, "Unexpected error: $e");

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/signUp_fields/confirm_password_field.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/signUp_fields/email_field.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/signUp_fields/password_field.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/signUp_fields/username_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/signUp_fields/ign_up_confirm_password_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/signUp_fields/ign_up_email_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/signUp_fields/ign_up_password_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/signUp/signUp_fields/ign_up_username_field.dart';
 
 class SignUpFields extends StatelessWidget {
   final TextEditingController userNameController;
@@ -29,17 +29,17 @@ class SignUpFields extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          UsernameField(
+          SignUPUsernameField(
             userNameController: userNameController,
           ),
-          EmailField(
+          SignUPEmailField(
             emailController: emailController,
           ),
-          PasswordField(
+          SignUPPasswordField(
             passwordController: passwordController,
             formKey: formKey,
           ),
-          ConfirmPasswordField(
+          SignUPConfirmPasswordField(
             confirmPasswordController: confirmPasswordController,
             passwordController: passwordController,
             formKey: formKey,
