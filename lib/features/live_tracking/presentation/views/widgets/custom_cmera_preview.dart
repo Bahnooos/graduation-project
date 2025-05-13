@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter_vision/flutter_vision.dart';
 
 class CustomCameraPreview extends StatefulWidget {
@@ -16,12 +17,26 @@ class _CustomCameraPreviewState extends State<CustomCameraPreview> {
   CameraImage? cameraImage;
   bool isLoaded = false;
   bool isDetecting = false;
+  FlutterTts flutterTts = FlutterTts();
 
   @override
   void initState() {
     super.initState();
     vision = FlutterVision();
+    initTTS();
     init();
+  }
+
+  Future<void> initTTS() async {
+    // TTS
+    await flutterTts.setLanguage("en-US"); // Set the language you want
+    await flutterTts.setSpeechRate(1.0); // Adjust speech rate (1.0 is normal)
+    await flutterTts.setVolume(3.0); // Adjust volume (0.0 to 1.0)
+    await flutterTts.setPitch(1.0); // Adjust pitch (1.0 is normal)
+  }
+
+  Future<void> speak(String text) async {
+    await flutterTts.speak(text); // TTS
   }
 
   init() async {
@@ -42,6 +57,7 @@ class _CustomCameraPreviewState extends State<CustomCameraPreview> {
   void dispose() async {
     super.dispose();
     controller.dispose();
+    flutterTts.stop();
   }
 
   @override
@@ -144,6 +160,7 @@ class _CustomCameraPreviewState extends State<CustomCameraPreview> {
     Color colorPick = const Color.fromARGB(255, 50, 233, 30);
 
     return yoloResults.map((result) {
+      speak("${result['tag']}");
       return Positioned(
         left: result["box"][0] * factorX,
         top: result["box"][1] * factorY,
