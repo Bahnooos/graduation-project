@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_divider.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/custom_divider.dart';
 
 class GoogleButton extends StatelessWidget {
   final String text;
@@ -18,7 +18,7 @@ class GoogleButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5),
             ),
-            minimumSize: const Size(double.infinity, 60),
+            minimumSize: const Size(double.infinity, 50),
           ),
           child: FaIcon(
             FontAwesomeIcons.google,

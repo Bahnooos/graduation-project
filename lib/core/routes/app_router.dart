@@ -4,7 +4,6 @@ import 'package:graduation_project/features/authentication/presentation/views/lo
 import 'package:graduation_project/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/history/presentation/views/history_view.dart';
 import 'package:graduation_project/features/home/presentation/views/navigation_home_view.dart';
-import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 import 'package:graduation_project/features/live_tracking/presentation/views/live_tracking_view.dart';
 import 'package:graduation_project/features/settings/presentation/views/settings_view.dart';
 import 'package:graduation_project/features/splash/presentation/views/splash_view.dart';
@@ -28,10 +27,6 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const NavigationHomeView(),
         );
-      case Routes.home:
-        return MaterialPageRoute(
-          builder: (_) => const HomeView(),
-        );
       case Routes.liveTracking:
         return MaterialPageRoute(
           builder: (_) => const LiveTrackingView(),
@@ -44,6 +39,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const HistoryView(),
         );
+
       default:
         return null;
     }

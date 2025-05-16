@@ -19,7 +19,9 @@ class DoNotHaveAccount extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/signUp');
+            },
             child: Text(
               'Signup',
               style: Styles.latoBold14.copyWith(
