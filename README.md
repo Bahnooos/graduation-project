@@ -1,4 +1,8 @@
-# graduation_project
+# Masarak App
+
+## 🎨 System Design
+![Screenshot 2025-03-15 023922](https://github.com/user-attachments/assets/60da0170-a6fe-472a-a273-f5dbe9ef32e3)
+
 
 A new Flutter project.
 

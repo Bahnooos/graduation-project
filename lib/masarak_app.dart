@@ -1,11 +1,13 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/routes/app_router.dart';
 import 'package:graduation_project/core/routes/routes.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/constants.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class MasarakApp extends StatelessWidget {
   const MasarakApp({super.key});
@@ -18,7 +20,7 @@ class MasarakApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,       
         title: 'Masark',
         theme: ThemeData(
           textSelectionTheme: TextSelectionThemeData(
@@ -30,6 +32,13 @@ class MasarakApp extends StatelessWidget {
           useMaterial3: true,
         ),
         initialRoute: Routes.welcome,
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
         onGenerateRoute: AppRouter().generateRoute,
       ),
     );

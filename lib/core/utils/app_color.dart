@@ -15,4 +15,7 @@ abstract class AppColor {
   static const Color settingsArrowColor = Color(0xff4B4B4B);
   static const Color settingsDividerColor = Color(0xffCACACA);
   static const Color errorColor = Color(0xFFF44336);
+  static const Color settingsColor = Color(0xffADADAD);
+  static const Color dividerColor = Color(0xFFC9C9C9);
+  static const Color greenColor = Colors.green;
 }
