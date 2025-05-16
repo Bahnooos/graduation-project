@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/authentication/presentation/views/functions/loading_overlay.dart';
-import 'package:graduation_project/features/authentication/presentation/views/functions/show_custom_snack_bar.dart';
+import 'package:graduation_project/features/authentication/presentation/functions/loading_overlay.dart';
+import 'package:graduation_project/features/authentication/presentation/functions/show_custom_snack_bar.dart';
 
 void handleLoginError(BuildContext context, FirebaseAuthException e) {
   String errorMessage = "Login failed. Please try again.";
