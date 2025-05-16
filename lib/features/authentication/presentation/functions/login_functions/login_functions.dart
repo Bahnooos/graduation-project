@@ -34,10 +34,7 @@ Future<void> loginWithEmail(
 
     if (user != null) {
       hideLoadingOverlay(context);
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const Scaffold()),
-      );
+      Navigator.pushReplacementNamed(context, '/navigationHome');
     } else {
       hideLoadingOverlay(context);
       showCustomSnackBar(context, "Login failed. Please try again.");

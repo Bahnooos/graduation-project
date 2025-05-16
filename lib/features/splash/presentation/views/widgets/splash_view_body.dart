@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/routes/routes.dart';
-import 'package:graduation_project/features/splash/presentation/views/widgets/splash_view_body_content.dart';
+import 'package:graduation_project/core/utils/app_color.dart';
+import 'package:graduation_project/core/utils/styles.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -30,6 +31,43 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return SplashViewBodyContent(scale: _scale);
+    return Center(
+      child: TweenAnimationBuilder(
+        tween: Tween<double>(begin: 0.1, end: _scale),
+        duration: Duration(seconds: 1),
+        curve: Curves.easeOut,
+        builder: (context, double scale, child) {
+          return Transform.scale(
+            scale: scale,
+            child: child,
+          );
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/logo.jpg',
+              height: 100,
+              width: 100,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'asarak',
+                  style: Styles.interBold40.copyWith(
+                    color: AppColor.textWhiteColor,
+                  ),
+                ),
+                Text(
+                  '\n',
+                  style: Styles.latoBold12,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
