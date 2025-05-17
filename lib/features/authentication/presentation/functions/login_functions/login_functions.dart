@@ -34,7 +34,7 @@ Future<void> loginWithEmail(
 
     if (user != null) {
       hideLoadingOverlay(context);
-      Navigator.pushNamed(context, '/navigationHome');
+      Navigator.pushReplacementNamed(context, '/navigationHome');
     } else {
       hideLoadingOverlay(context);
       showCustomSnackBar(context, "Login failed. Please try again.");

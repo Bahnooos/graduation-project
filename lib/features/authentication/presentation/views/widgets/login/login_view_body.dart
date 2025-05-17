@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
-import 'package:graduation_project/features/authentication/presentation/functions/login_functions/login_functionss.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/custom_button.dart';
+import 'package:graduation_project/features/authentication/presentation/functions/login_functions/login_functions.dart';
+import 'package:graduation_project/core/widgets/custom_button.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/google_button.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/login/do_not_have_account.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/login/login_fields.dart';
