@@ -9,29 +9,32 @@ class CustomBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                'assets/images/splash.jpg',
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/images/splash.jpg',
+                ),
+                fit: BoxFit.cover,
               ),
-              fit: BoxFit.cover,
             ),
           ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.black, Colors.transparent],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.black, Colors.transparent],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+              ),
             ),
           ),
-        ),
-        body,
-      ],
+          body,
+        ],
+      ),
     );
   }
 }

@@ -22,7 +22,9 @@ class AlreadyHaveAccount extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/login');
+            },
             child: Text(
               'Login',
               style: Styles.latoBold14.copyWith(

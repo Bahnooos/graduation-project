@@ -29,6 +29,7 @@ class HomeViewBody extends StatelessWidget {
                 height: 1.3,
               )),
           CustomButton(
+            onPressed: () {},
             text: 'Start Tracking',
           ),
         ],

@@ -85,7 +85,8 @@ class _CustomCameraPreviewState extends State<CustomCameraPreview> {
             width: 80,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(width: 5, color: Colors.white, style: BorderStyle.solid),
+              border: Border.all(
+                  width: 5, color: Colors.white, style: BorderStyle.solid),
             ),
             child: isDetecting
                 ? IconButton(
@@ -115,14 +116,25 @@ class _CustomCameraPreviewState extends State<CustomCameraPreview> {
   }
 
   Future<void> loadYoloModel() async {
-    await vision.loadYoloModel(labels: 'assets/tfLite/labels.txt', modelPath: 'assets/tfLite/best2_float32.tflite', modelVersion: "yolov8", numThreads: 2, useGpu: true);
+    await vision.loadYoloModel(
+        labels: 'assets/tfLite/labels.txt',
+        modelPath: 'assets/tfLite/best2_float32.tflite',
+        modelVersion: "yolov8",
+        numThreads: 2,
+        useGpu: true);
     setState(() {
       isLoaded = true;
     });
   }
 
   Future<void> yoloOnFrame(CameraImage cameraImage) async {
-    final result = await vision.yoloOnFrame(bytesList: cameraImage.planes.map((plane) => plane.bytes).toList(), imageHeight: cameraImage.height, imageWidth: cameraImage.width, iouThreshold: 0.2, confThreshold: 0.3, classThreshold: 0.3);
+    final result = await vision.yoloOnFrame(
+        bytesList: cameraImage.planes.map((plane) => plane.bytes).toList(),
+        imageHeight: cameraImage.height,
+        imageWidth: cameraImage.width,
+        iouThreshold: 0.2,
+        confThreshold: 0.3,
+        classThreshold: 0.3);
     if (result.isNotEmpty) {
       setState(() {
         yoloResults = result;
