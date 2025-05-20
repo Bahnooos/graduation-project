@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/routes/routes.dart';
+import 'package:graduation_project/features/authentication/presentation/views/forget_password_view.dart';
 import 'package:graduation_project/features/authentication/presentation/views/login_view.dart';
 import 'package:graduation_project/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/history/presentation/views/history_view.dart';
@@ -38,6 +39,10 @@ class AppRouter {
       case Routes.history:
         return MaterialPageRoute(
           builder: (_) => const HistoryView(),
+        );
+      case Routes.forgetPassword:
+        return MaterialPageRoute(
+          builder: (_) => const ForgetPasswordView(),
         );
 
       default:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graduation_project/core/routes/routes.dart';
 
 import 'package:graduation_project/features/authentication/functions/show_custom_snack_bar.dart';
 import 'package:graduation_project/features/authentication/presentation/cubit/registration_cubit/registration_cubit.dart';
@@ -14,7 +15,7 @@ class VerificationDialog extends StatelessWidget {
       listener: (context, state) {
         if (state is VerifiedState) {
           Navigator.pop(context);
-          Navigator.pushNamed(context, '/login');
+          Navigator.pushNamed(context, Routes.login);
         } else if (state is UnverifiedState) {
           Navigator.pop(context);
           showCustomSnackBar(context, "Email not verified yet. Try again.");

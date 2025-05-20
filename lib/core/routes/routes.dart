@@ -3,6 +3,7 @@ abstract class Routes {
   static const String signUp = '/signUp';
   static const String login = '/login';
   static const String navigationHome = '/navigationHome';
+  static const String forgetPassword = '/forgetPassword';
   static const String liveTracking = '/liveTracking';
   static const String settings = '/settings';
   static const String history = '/history';

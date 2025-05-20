@@ -25,9 +25,20 @@ class ForgetPasswordViewBody extends StatelessWidget {
         }
 
         if (state is ForgetPasswordSuccessState) {
-          showCustomSnackBar(context, 'A password reset email has been sent.');
+          Navigator.pop(context);
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("Password reset link sent to your email."),
+              backgroundColor: Colors.green,
+            ),
+          );
         } else if (state is ForgetPasswordFailureState) {
-          showCustomSnackBar(context, state.errorMessage);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.errorMessage),
+              backgroundColor: Colors.red,
+            ),
+          );
         }
       },
       builder: (context, state) {

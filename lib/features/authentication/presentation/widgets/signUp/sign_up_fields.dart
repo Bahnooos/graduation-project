@@ -23,7 +23,6 @@ class SignUpFields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      autovalidateMode: AutovalidateMode.onUserInteraction,
       key: formKey,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

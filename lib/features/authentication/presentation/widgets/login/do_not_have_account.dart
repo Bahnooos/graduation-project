@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/routes/routes.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 
@@ -20,7 +21,7 @@ class DoNotHaveAccount extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/signUp');
+              Navigator.pushNamed(context, Routes.signUp);
             },
             child: Text(
               'Signup',

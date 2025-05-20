@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graduation_project/core/routes/routes.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button.dart';
@@ -44,7 +45,8 @@ class LoginViewBody extends StatelessWidget {
                   if (state is LoginFailureState) {
                     showCustomSnackBar(context, state.errorMessage);
                   } else if (state is LoginSuccessState) {
-                    Navigator.pushReplacementNamed(context, '/navigationHome');
+                    Navigator.pushReplacementNamed(
+                        context, Routes.navigationHome);
                   }
                 },
                 builder: (context, state) {
