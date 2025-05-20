@@ -3,29 +3,25 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button.dart';
+import 'package:graduation_project/features/authentication/functions/loading_overlay.dart';
+import 'package:graduation_project/features/authentication/presentation/widgets/signUp/verification_dialog.dart';
 import 'package:graduation_project/features/authentication/functions/show_custom_snack_bar.dart';
+import 'package:graduation_project/features/authentication/presentation/cubit/registration_cubit/registration_cubit.dart';
+import 'package:graduation_project/features/authentication/presentation/cubit/registration_cubit/registration_cubit_states.dart';
 import 'package:graduation_project/features/authentication/presentation/widgets/custom_widgets/google_button.dart';
 import 'package:graduation_project/features/authentication/presentation/widgets/signUp/already_have_account.dart';
 import 'package:graduation_project/features/authentication/presentation/widgets/signUp/sign_up_fields.dart';
-import 'package:graduation_project/features/authentication/presentation/cubit/authentication_cubit.dart';
-import 'package:graduation_project/features/authentication/presentation/cubit/authentication_cubit_states.dart';
 
-class SignUpViewBody extends StatefulWidget {
+class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({super.key});
 
   @override
-  State<SignUpViewBody> createState() => _SignUpViewBodyState();
-}
-
-class _SignUpViewBodyState extends State<SignUpViewBody> {
-  final userNameController = TextEditingController();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
-  final formKey = GlobalKey<FormState>();
-
-  @override
   Widget build(BuildContext context) {
+    final userNameController = TextEditingController();
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+    final confirmPasswordController = TextEditingController();
+    final formKey = GlobalKey<FormState>();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 26),
       child: Column(
@@ -40,18 +36,30 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: BlocConsumer<AuthenticationCubit, AuthenticationState>(
+              child: BlocConsumer<RegistrationCubit, RegistrationState>(
                 listener: (context, state) async {
-                  if (state is FailureState) {
+                  if (state is RegistrationLoadingState) {
+                    showLoadingOverlay(context);
+                  } else {
+                    hideLoadingOverlay(context);
+                  }
+                  if (state is RegistrationFailureState) {
                     showCustomSnackBar(context, state.errorMessage);
-                  } else if (state is LoggedOutState) {
-                    Navigator.pop(context);
+                  }
+
+                  if (state is UnderVerificationState) {
+                    showDialog(
+                      context: context,
+                      barrierDismissible: false,
+                      barrierColor: Colors.black.withOpacity(0.3),
+                      builder: (dialogContext) => BlocProvider.value(
+                        value: context.read<RegistrationCubit>(),
+                        child: const VerificationDialog(),
+                      ),
+                    );
                   }
                 },
                 builder: (context, state) {
-                  if (state is LoadingState) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
                   return Column(
                     children: [
                       SignUpFields(
@@ -66,7 +74,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.save();
-                            context.read<AuthenticationCubit>().register(
+                            context.read<RegistrationCubit>().register(
                                   context,
                                   emailController.text.trim(),
                                   passwordController.text.trim(),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/signUp/signUp_fields/ign_up_confirm_password_field.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/signUp/signUp_fields/ign_up_email_field.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/signUp/signUp_fields/ign_up_password_field.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/signUp/signUp_fields/ign_up_username_field.dart';
+import 'package:graduation_project/features/authentication/presentation/widgets/signUp/signUp_fields/sign_up_confirm_password_field.dart';
+import 'package:graduation_project/features/authentication/presentation/widgets/signUp/signUp_fields/sign_up_email_field.dart';
+import 'package:graduation_project/features/authentication/presentation/widgets/signUp/signUp_fields/sign_up_password_field.dart';
+import 'package:graduation_project/features/authentication/presentation/widgets/signUp/signUp_fields/sign_up_username_field.dart';
 
 class SignUpFields extends StatelessWidget {
   final TextEditingController userNameController;

@@ -3,12 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button.dart';
+import 'package:graduation_project/features/authentication/functions/loading_overlay.dart';
 import 'package:graduation_project/features/authentication/functions/show_custom_snack_bar.dart';
+import 'package:graduation_project/features/authentication/presentation/cubit/login_cubit/login_cubit.dart';
+import 'package:graduation_project/features/authentication/presentation/cubit/login_cubit/login_cubit_states.dart';
 import 'package:graduation_project/features/authentication/presentation/widgets/custom_widgets/google_button.dart';
 import 'package:graduation_project/features/authentication/presentation/widgets/login/do_not_have_account.dart';
 import 'package:graduation_project/features/authentication/presentation/widgets/login/login_fields.dart';
-import 'package:graduation_project/features/authentication/presentation/cubit/authentication_cubit.dart';
-import 'package:graduation_project/features/authentication/presentation/cubit/authentication_cubit_states.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -33,19 +34,20 @@ class LoginViewBody extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: BlocConsumer<AuthenticationCubit, AuthenticationState>(
+              child: BlocConsumer<LoginCubit, LoginCubitState>(
                 listener: (context, state) {
-                  if (state is FailureState) {
+                  if (state is LoginLoadingState) {
+                    showLoadingOverlay(context);
+                  } else {
+                    hideLoadingOverlay(context);
+                  }
+                  if (state is LoginFailureState) {
                     showCustomSnackBar(context, state.errorMessage);
-                  } else if (state is SuccessState) {
+                  } else if (state is LoginSuccessState) {
                     Navigator.pushReplacementNamed(context, '/navigationHome');
                   }
                 },
                 builder: (context, state) {
-                  if (state is LoadingState) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-
                   return Column(
                     children: [
                       LoginFields(
@@ -58,7 +60,7 @@ class LoginViewBody extends StatelessWidget {
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.save();
-                            context.read<AuthenticationCubit>().signIn(
+                            context.read<LoginCubit>().signIn(
                                   emailController.text.trim(),
                                   passwordController.text.trim(),
                                 );
