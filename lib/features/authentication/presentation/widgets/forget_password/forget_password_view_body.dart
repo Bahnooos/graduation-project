@@ -15,7 +15,6 @@ class ForgetPasswordViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final emailController = TextEditingController();
-
     return BlocConsumer<ForgetPasswordCubit, ForgetPasswordState>(
       listener: (context, state) {
         if (state is ForgetPasswordLoadingState) {
@@ -26,19 +25,13 @@ class ForgetPasswordViewBody extends StatelessWidget {
 
         if (state is ForgetPasswordSuccessState) {
           Navigator.pop(context);
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text("Password reset link sent to your email."),
-              backgroundColor: Colors.green,
-            ),
+          showCustomSnackBar(
+            context,
+            "Password reset link sent to your email.",
+            color: AppColor.greenColor,
           );
         } else if (state is ForgetPasswordFailureState) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.errorMessage),
-              backgroundColor: Colors.red,
-            ),
-          );
+          showCustomSnackBar(context, state.errorMessage);
         }
       },
       builder: (context, state) {

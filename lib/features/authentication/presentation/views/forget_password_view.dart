@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graduation_project/core/widgets/custom_background.dart';
 import 'package:graduation_project/features/authentication/presentation/cubit/forget_password/forget_password_cubit.dart';
 import 'package:graduation_project/features/authentication/presentation/widgets/forget_password/forget_password_view_body.dart';
 
@@ -10,7 +11,9 @@ class ForgetPasswordView extends StatelessWidget {
     return BlocProvider(
       create: (context) => ForgetPasswordCubit(),
       child: Scaffold(
-        body: ForgetPasswordViewBody(),
+        body: CustomBackground(
+          body: ForgetPasswordViewBody(),
+        ),
       ),
     );
   }
