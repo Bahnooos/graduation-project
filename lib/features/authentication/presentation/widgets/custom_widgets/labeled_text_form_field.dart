@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
-import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/custom_text_form_field.dart';
+import 'package:graduation_project/features/authentication/presentation/widgets/custom_widgets/custom_text_form_field.dart';
 
 class LabeledTextFormField extends StatelessWidget {
   final String hintText;
