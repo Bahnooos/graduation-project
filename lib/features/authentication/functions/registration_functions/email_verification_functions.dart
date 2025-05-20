@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/signUp/verification_dialog.dart';
+import 'package:graduation_project/features/authentication/functions/registration_functions/verification_dialog.dart';
 
 Future<void> sendVerificationEmail(User user) async {
   if (!user.emailVerified) {

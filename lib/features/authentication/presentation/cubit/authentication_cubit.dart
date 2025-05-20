@@ -34,8 +34,6 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
   Future<void> register(
       BuildContext context, String email, String password) async {
     emit(LoadingState());
-    FocusScope.of(context).unfocus();
-
     try {
       final userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
@@ -45,11 +43,16 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       if (user != null) {
         await user.sendEmailVerification();
         await showVerificationDialog(context);
+        emit(SuccessState(user));
         await FirebaseAuth.instance.signOut();
         emit(LoggedOutState());
+      } else {
+        emit(FailureState("Registration failed. Please try again."));
       }
     } on FirebaseAuthException catch (e) {
       emit(FailureState(registrationErrorHandler(e.code)));
+    } catch (e) {
+      emit(FailureState("Unexpected error: $e"));
     }
   }
 
