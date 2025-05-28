@@ -2,9 +2,9 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/authentication/presentation/functions/registration_functions/email_verification_functions.dart';
-import 'package:graduation_project/features/authentication/presentation/functions/loading_overlay.dart';
-import 'package:graduation_project/features/authentication/presentation/functions/show_custom_snack_bar.dart';
+import 'package:graduation_project/features/authentication/functions/registration_functions/email_verification_functions.dart';
+import 'package:graduation_project/features/authentication/functions/loading_overlay.dart';
+import 'package:graduation_project/features/authentication/functions/show_custom_snack_bar.dart';
 
 Future<User?> createUser(String email, String password) async {
   UserCredential userCredential = await FirebaseAuth.instance
