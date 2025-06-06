@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 
-showCustomSnackBar(BuildContext context, String message) {
+showCustomSnackBar(BuildContext context, String message, {Color? color}) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Text(
         message,
       ),
-      backgroundColor: AppColor.errorColor,
-      duration: const Duration(seconds: 2),
+      backgroundColor: color ?? AppColor.errorColor,
+      duration: const Duration(seconds: 3),
       behavior: SnackBarBehavior.floating,
     ),
   );

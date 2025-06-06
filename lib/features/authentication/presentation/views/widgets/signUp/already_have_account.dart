@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/routes/routes.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 
@@ -23,7 +24,7 @@ class AlreadyHaveAccount extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/login');
+              Navigator.pushNamed(context, Routes.login);
             },
             child: Text(
               'Login',
