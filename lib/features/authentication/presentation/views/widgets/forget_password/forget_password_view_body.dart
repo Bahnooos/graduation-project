@@ -5,7 +5,7 @@ import 'package:graduation_project/core/utils/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button.dart';
 import 'package:graduation_project/features/authentication/presentation/cubit/forget_password/forget_password_cubit.dart';
 import 'package:graduation_project/features/authentication/presentation/cubit/forget_password/forget_password_cubit_states.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/forget_password/forget_password_email_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/forget_password/forget_password_email_field.dart';
 import 'package:graduation_project/features/authentication/functions/show_custom_snack_bar.dart';
 import 'package:graduation_project/features/authentication/functions/loading_overlay.dart';
 

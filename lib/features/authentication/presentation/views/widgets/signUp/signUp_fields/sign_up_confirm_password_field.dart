@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/custom_widgets/labeled_text_form_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/labeled_text_form_field.dart';
 
 class SignUPConfirmPasswordField extends StatelessWidget {
   final TextEditingController confirmPasswordController;

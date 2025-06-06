@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/login/forget_password.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/login/login_fields/login_email_field.dart';
-import 'package:graduation_project/features/authentication/presentation/widgets/login/login_fields/login_password_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/login/forget_password.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/login/login_fields/login_email_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/login/login_fields/login_password_field.dart';
 
 class LoginFields extends StatelessWidget {
   final TextEditingController emailController;
