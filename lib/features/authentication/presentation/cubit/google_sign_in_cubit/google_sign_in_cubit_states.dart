@@ -12,6 +12,6 @@ class GoogleSignInSuccess extends GoogleSignInState {
 }
 
 class GoogleSignInFailure extends GoogleSignInState {
-  final String error;
-  GoogleSignInFailure(this.error);
+  final String errorMessage;
+  GoogleSignInFailure(this.errorMessage);
 }
