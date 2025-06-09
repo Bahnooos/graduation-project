@@ -6,6 +6,8 @@ String registrationErrorHandler(String code) {
       return "The password is too weak.";
     case 'invalid-email':
       return "The email format is invalid.";
+    case 'network-request-failed':
+      return "Please check your internet connection.";
     default:
       return "Registration failed. Please try again.";
   }

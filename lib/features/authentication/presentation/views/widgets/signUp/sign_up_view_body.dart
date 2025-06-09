@@ -78,6 +78,7 @@ class SignUpViewBody extends StatelessWidget {
                                   context,
                                   emailController.text.trim(),
                                   passwordController.text.trim(),
+                                  userNameController.text.trim(),
                                 );
                           }
                         },

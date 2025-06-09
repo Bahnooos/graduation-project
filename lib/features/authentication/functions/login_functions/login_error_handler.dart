@@ -8,6 +8,8 @@ String loginErrorHandler(String code) {
       return "Invalid email format.";
     case 'user-disabled':
       return "This account has been disabled.";
+    case 'network-request-failed':
+      return "Please check your internet connection.";
     default:
       return "Login failed. Please try again.";
   }

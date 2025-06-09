@@ -6,6 +6,8 @@ String getForgetPasswordErrorMessage(FirebaseAuthException e) {
       return "No user found with this email.";
     case 'invalid-email':
       return "Invalid email format.";
+    case 'network-request-failed':
+      return "Please check your internet connection.";
     default:
       return "Password reset failed. Please try again.";
   }
