@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:graduation_project/core/repositories/user_data_repository.dart';
 
 class AuthenticationRepository {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   Future<UserModel> registerWithEmail(
       String email, String password, String username) async {
@@ -18,6 +20,27 @@ class AuthenticationRepository {
     await sendVerificationEmail(user);
 
     return UserModel.fromFirebaseUser(_auth.currentUser!);
+  }
+
+  Future<UserModel> signInWithGoogle() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+
+    final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+    if (googleUser == null) throw Exception('Sign-in aborted by user');
+
+    final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    final userCredential = await _auth.signInWithCredential(credential);
+    final user = userCredential.user;
+    if (user == null) throw Exception("Google Sign-In failed: user is null");
+
+    return UserModel.fromFirebaseUser(user);
   }
 
   Future<void> sendVerificationEmail(User user) async {
