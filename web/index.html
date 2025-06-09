@@ -15,7 +15,9 @@
     the `--base-href` argument provided to `flutter build`.
   -->
   <base href="$FLUTTER_BASE_HREF">
-
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <meta name="google-signin-client_id" content="83107759419-9djn8n5j6bitnfifjnpvcmnjqr0vokra.apps.googleusercontent.com" />
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
@@ -34,5 +36,19 @@
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
+  <script>
+  window.onload = function () {
+    gapi.load('client', () => {
+      gapi.client.init({
+        apiKey: 'AIzaSyDqzDuu4MbMzoifXnLsr1jUq1No9JZT_GQ',
+        clientId: '83107759419-9djn8n5j6bitnfifjnpvcmnjqr0vokra.apps.googleusercontent.com',
+        discoveryDocs: ['https://people.googleapis.com/$discovery/rest?version=v1'],
+        scope: 'profile email'
+      }).then(() => {
+        console.log('GAPI Client Ready');
+      });
+    });
+  }
+  </script>
 </body>
 </html>
