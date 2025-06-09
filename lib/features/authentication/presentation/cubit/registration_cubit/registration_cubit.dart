@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:graduation_project/core/repositories/authentication_repository.dart';
+import 'package:graduation_project/core/repositories/user_model.dart';
 import 'package:graduation_project/features/authentication/models/authentication_error_handler.dart';
-import 'package:graduation_project/features/authentication/models/save_data_into_database_model.dart';
+import 'package:graduation_project/features/authentication/models/user_data_repository.dart';
 import 'registration_cubit_states.dart';
 
 class RegistrationCubit extends Cubit<RegistrationState> {
@@ -34,7 +35,7 @@ class RegistrationCubit extends Cubit<RegistrationState> {
       final user = FirebaseAuth.instance.currentUser;
 
       if (verified && user != null) {
-        await userDataRepo.saveUserData(user);
+        await userDataRepo.saveUserData(UserModel.fromFirebaseUser(user));
         emit(VerifiedState());
       } else {
         await authRepo.deleteUserIfNotVerified();

@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graduation_project/features/authentication/models/user_data_repository.dart';
 import 'package:graduation_project/masarak_app.dart';
 import 'package:graduation_project/features/authentication/presentation/cubit/google_sign_in_cubit/google_sign_in_cubit.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -15,14 +16,15 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  final authRepo = AuthenticationRepository();
-
   runApp(
     DevicePreview(
       builder: (context) => MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (_) => GoogleSignInCubit(authRepo),
+            create: (_) => GoogleSignInCubit(
+              AuthenticationRepository(),
+              UserDataRepository(),
+            ),
           ),
         ],
         child: const MasarakApp(),
