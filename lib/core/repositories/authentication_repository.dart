@@ -4,6 +4,7 @@ import 'package:graduation_project/core/repositories/user_data_repository.dart';
 
 class AuthenticationRepository {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   Future<UserModel> registerWithEmail(
       String email, String password, String username) async {
