@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:graduation_project/features/authentication/functions/registration_functions/registration_error_handler.dart';
-import 'package:graduation_project/features/authentication/models/authentication_class.dart';
-import 'package:graduation_project/features/authentication/models/save_data_into_database.dart';
+import 'package:graduation_project/core/repositories/authentication_repository.dart';
+import 'package:graduation_project/features/authentication/models/authentication_error_handler.dart';
+import 'package:graduation_project/features/authentication/models/save_data_into_database_model.dart';
 import 'registration_cubit_states.dart';
 
 class RegistrationCubit extends Cubit<RegistrationState> {
@@ -20,7 +20,8 @@ class RegistrationCubit extends Cubit<RegistrationState> {
       await authRepo.registerWithEmail(email, password, username);
       emit(UnderVerificationState());
     } on FirebaseAuthException catch (e) {
-      emit(RegistrationFailureState(registrationErrorHandler(e.code)));
+      emit(RegistrationFailureState(
+          AuthenticationErrorHandler.registration(e.code)));
     } catch (e) {
       emit(RegistrationFailureState("Unexpected error: $e"));
     }

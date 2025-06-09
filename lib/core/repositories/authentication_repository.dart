@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:graduation_project/features/authentication/models/user_class.dart';
+import 'package:graduation_project/core/repositories/user_data_repository.dart';
 
 class AuthenticationRepository {
   final FirebaseAuth _auth = FirebaseAuth.instance;

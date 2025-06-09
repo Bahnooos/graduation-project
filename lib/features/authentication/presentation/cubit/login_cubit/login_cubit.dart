@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graduation_project/features/authentication/functions/login_functions/login_error_handler.dart';
-import 'package:graduation_project/features/authentication/models/authentication_class.dart';
+import 'package:graduation_project/features/authentication/models/authentication_error_handler.dart';
+import 'package:graduation_project/core/repositories/authentication_repository.dart';
 import 'package:graduation_project/features/authentication/presentation/cubit/login_cubit/login_cubit_states.dart';
 
 class LoginCubit extends Cubit<LoginCubitState> {
@@ -15,7 +15,7 @@ class LoginCubit extends Cubit<LoginCubitState> {
       await authRepo.loginWithEmail(email, password);
       emit(LoginSuccessState(FirebaseAuth.instance.currentUser!));
     } on FirebaseAuthException catch (e) {
-      emit(LoginFailureState(loginErrorHandler(e.code)));
+      emit(LoginFailureState(AuthenticationErrorHandler.login(e.code)));
     } catch (e) {
       emit(LoginFailureState("Unexpected error: $e"));
     }
