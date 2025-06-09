@@ -78,9 +78,4 @@ class AuthenticationRepository {
       await user.delete();
     }
   }
-
-  UserModel? get currentUser {
-    final user = _auth.currentUser;
-    return user != null ? UserModel.fromFirebaseUser(user) : null;
-  }
 }
