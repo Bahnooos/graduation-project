@@ -38,23 +38,6 @@ class AuthenticationRepository {
     return UserModel.fromFirebaseUser(user);
   }
 
-  Future<User?> signInWithGoogle() async {
-    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-
-    if (googleUser == null) return null;
-
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
-
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
-
-    final userCredential = await _auth.signInWithCredential(credential);
-    return userCredential.user;
-  }
-
   Future<void> sendPasswordResetEmail(String email) async {
     await _auth.sendPasswordResetEmail(email: email);
   }
