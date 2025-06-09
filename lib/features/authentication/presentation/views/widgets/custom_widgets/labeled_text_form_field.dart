@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/custom_text_form_field.dart';
+import 'package:graduation_project/features/authentication/presentation/views/widgets/custom_widgets/custom_text_password_field.dart';
 
 class LabeledTextFormField extends StatelessWidget {
   final String hintText;
   final String label;
+  final bool isPassword;
   final TextEditingController controller;
   final String? Function(String?)? validator;
 
@@ -15,6 +17,7 @@ class LabeledTextFormField extends StatelessWidget {
     required this.label,
     required this.controller,
     required this.validator,
+    this.isPassword = false,
   });
 
   @override
@@ -29,11 +32,17 @@ class LabeledTextFormField extends StatelessWidget {
             style: Styles.latoBold14.copyWith(color: AppColor.textWhiteColor),
           ),
           const SizedBox(height: 5),
-          CustomTextFormField(
-            hintText: hintText,
-            controller: controller,
-            validator: validator,
-          ),
+          isPassword
+              ? CustomPasswordFormField(
+                  hintText: hintText,
+                  controller: controller,
+                  validator: validator,
+                )
+              : CustomTextFormField(
+                  hintText: hintText,
+                  controller: controller,
+                  validator: validator,
+                )
         ],
       ),
     );

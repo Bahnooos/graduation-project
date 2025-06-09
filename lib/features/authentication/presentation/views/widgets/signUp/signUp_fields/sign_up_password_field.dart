@@ -12,6 +12,7 @@ class SignUPPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LabeledTextFormField(
+      isPassword: true,
       hintText: 'Password',
       label: 'Password',
       controller: passwordController,

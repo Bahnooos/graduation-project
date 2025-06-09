@@ -15,6 +15,7 @@ class SignUPConfirmPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LabeledTextFormField(
+      isPassword: true,
       hintText: 'Confirm Password',
       label: 'Confirm Password',
       controller: confirmPasswordController,
