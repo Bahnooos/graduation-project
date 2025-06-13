@@ -7,8 +7,8 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomDefaultView(
-      appColorTitle: 'Hi',
-      whiteTitle: 'story',
+      appColorTitle: 'Pr',
+      whiteTitle: 'ofile',
       body: ProfileViewBody(),
     );
   }

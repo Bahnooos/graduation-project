@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/features/authentication/models/user_data_repository.dart';
+import 'package:graduation_project/features/authentication/presentation/cubit/forget_password_cubit/forget_password_cubit.dart';
 import 'package:graduation_project/masarak_app.dart';
 import 'package:graduation_project/features/authentication/presentation/cubit/google_sign_in_cubit/google_sign_in_cubit.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -24,6 +25,11 @@ void main() async {
             create: (_) => GoogleSignInCubit(
               AuthenticationRepository(),
               UserDataRepository(),
+            ),
+          ),
+          BlocProvider(
+            create: (context) => ForgetPasswordCubit(
+              AuthenticationRepository(),
             ),
           ),
         ],

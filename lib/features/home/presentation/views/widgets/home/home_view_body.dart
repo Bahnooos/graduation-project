@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/routes/routes.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button.dart';
+import 'package:graduation_project/features/home/presentation/views/widgets/navigation_home/custom_bottom_navigation_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});

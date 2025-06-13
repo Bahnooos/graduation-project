@@ -9,7 +9,6 @@ abstract class Constants {
 
   static final List<Widget> pages = [
     ProfileView(),
-    Center(child: Text('Statistics')),
     HomeView(),
     LiveTrackingView(),
     HistoryView(),
