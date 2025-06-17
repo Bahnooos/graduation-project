@@ -24,19 +24,15 @@ packages:
       sha256: "947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c"
       url: "https://pub.dev"
     source: hosted
-
-    version: "2.12.0"
-
+    version: "2.11.0"
   bloc:
     dependency: transitive
     description:
       name: bloc
-
       sha256: "52c10575f4445c61dd9e0cafcc6356fdd827c4c64dd7945ef3c4105f6b6ac189"
       url: "https://pub.dev"
     source: hosted
     version: "9.0.0"
-
   boolean_selector:
     dependency: transitive
     description:
@@ -57,10 +53,10 @@ packages:
     dependency: transitive
     description:
       name: camera_android_camerax
-      sha256: "68d7ec97439108ac22cfba34bb74d0ab53adbc017175116d2cbc5a3d8fc8ea5e"
+      sha256: "9fb44e73e0fea3647a904dc26d38db24055e5b74fc68fd2b6d3abfa1bd20f536"
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.18+2"
+    version: "0.6.17"
   camera_avfoundation:
     dependency: transitive
     description:
@@ -100,8 +96,7 @@ packages:
       sha256: cb6d7f03e1de671e34607e909a7213e31d7752be4fb66a86d29fe1eb14bfb5cf
       url: "https://pub.dev"
     source: hosted
-
-    version: "1.1.2"
+    version: "1.1.1"
   cloud_firestore:
     dependency: "direct main"
     description:
@@ -126,7 +121,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.4.8"
-
   collection:
     dependency: transitive
     description:
@@ -195,10 +189,10 @@ packages:
     dependency: transitive
     description:
       name: ffi
-      sha256: "289279317b4b16eb2bb7e271abccd4bf84ec9bdcbe999e278a94b804f5630418"
+      sha256: "16ed7b077ef01ad6170a3d0c57caa4a112a38d7a2ed5602e0aca9ca6f3d98da6"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.4"
+    version: "2.1.3"
   file:
     dependency: transitive
     description:
@@ -264,7 +258,6 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_bloc
-
       sha256: cf51747952201a455a1c840f8171d273be009b932c75093020f9af64f2123e38
       url: "https://pub.dev"
     source: hosted
@@ -340,7 +333,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.4"
-
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      sha256: d85128a5dae4ea777324730dc65edd9c9f43155c109d5cc0a69cab74139fbac1
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.7.0"
   google_identity_services_web:
     dependency: transitive
     description:
@@ -397,7 +397,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
-
   http_parser:
     dependency: transitive
     description:
@@ -413,9 +412,15 @@ packages:
       sha256: "4e973fcf4caae1a4be2fa0a13157aa38a8f9cb049db6529aa00b4d71abc4d928"
       url: "https://pub.dev"
     source: hosted
-
     version: "4.5.4"
-
+  injectable:
+    dependency: "direct main"
+    description:
+      name: injectable
+      sha256: "5e1556ea1d374fe44cbe846414d9bab346285d3d8a1da5877c01ad0774006068"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.5.0"
   intl:
     dependency: transitive
     description:
@@ -505,7 +510,7 @@ packages:
     source: hosted
     version: "1.9.0"
   path_provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path_provider
       sha256: "50c5dd5b6e1aaf6fb3a78b33f6aa3afca52bf903a8a5298f53101fdaee55bbcd"
@@ -604,10 +609,10 @@ packages:
     dependency: transitive
     description:
       name: petitparser
-      sha256: "07c8f0b1913bcde1ff0d26e57ace2f3012ccbf2b204e070290dad3bb22797646"
+      sha256: c15605cd28af66339f8eb6fbe0e541bfe2d1b72d5825efc6598f3e0a31b9ad27
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.0"
+    version: "6.0.2"
   platform:
     dependency: transitive
     description:
@@ -806,6 +811,5 @@ packages:
     source: hosted
     version: "6.5.0"
 sdks:
-
-  dart: ">=3.7.0 <4.0.0"
-  flutter: ">=3.29.0"
+  dart: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.0"

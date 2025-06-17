@@ -37,7 +37,6 @@ class FlutterVisionService {
         classThreshold: 0.3,
       );
     } catch (e) {
-      print("Object detection error: $e");
       return [];
     }
   }
