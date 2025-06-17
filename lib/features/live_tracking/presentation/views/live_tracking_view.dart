@@ -6,8 +6,6 @@ class LiveTrackingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appColorTitle: 'Live ',
-      // whiteTitle: 'Tracking',
       body: LiveTrackingViewBody(),
     );
   }

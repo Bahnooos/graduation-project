@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/routes/routes.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
+import 'package:graduation_project/core/local_storage/auth_local_storage.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -24,8 +25,14 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       });
     });
 
-    Future.delayed(Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, Routes.login);
+    Future.delayed(const Duration(seconds: 2), () async {
+      final isLoggedIn = await AuthLocalStorage.getLoginStatus();
+
+      if (isLoggedIn) {
+        Navigator.pushReplacementNamed(context, Routes.navigationHome);
+      } else {
+        Navigator.pushReplacementNamed(context, Routes.login);
+      }
     });
   }
 
