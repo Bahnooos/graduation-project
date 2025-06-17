@@ -1,10 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:graduation_project/core/repositories/user_data_repository.dart';
+import 'package:graduation_project/core/repositories/user_model.dart';
 
 class AuthenticationRepository {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   Future<UserModel> registerWithEmail(
       String email, String password, String username) async {
@@ -77,10 +76,5 @@ class AuthenticationRepository {
     if (user != null && !user.emailVerified) {
       await user.delete();
     }
-  }
-
-  UserModel? get currentUser {
-    final user = _auth.currentUser;
-    return user != null ? UserModel.fromFirebaseUser(user) : null;
   }
 }

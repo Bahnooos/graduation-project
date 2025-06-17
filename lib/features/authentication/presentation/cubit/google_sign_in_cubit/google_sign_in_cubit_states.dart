@@ -1,4 +1,4 @@
-import 'package:graduation_project/core/repositories/user_data_repository.dart';
+import 'package:graduation_project/core/repositories/user_model.dart';
 
 abstract class GoogleSignInState {}
 
