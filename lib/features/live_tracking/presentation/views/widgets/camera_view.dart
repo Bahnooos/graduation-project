@@ -61,7 +61,7 @@ class CameraView extends StatelessWidget {
 
   Widget _buildControlButton(BuildContext context, CameraLoadedState state) {
     return Positioned(
-      bottom: 75,
+      bottom: 50,
       left: 0,
       right: 0,
       child: Center(
@@ -74,11 +74,11 @@ class CameraView extends StatelessWidget {
           ),
           child: IconButton(
             onPressed: () => state.isDetecting 
-                ? context.read<CameraDetectionCubit>().stopDetection()
+                ? context.read<CameraDetectionCubit>().stopDetection() 
                 : context.read<CameraDetectionCubit>().startDetection(),
-            icon: Icon(
-              state.isDetecting ? Icons.stop : Icons.play_arrow,
-              color: state.isDetecting ? Colors.red : Colors.white,
+            icon: Text(
+              state.isDetecting ? 'stop' : 'start',
+              style: TextStyle(color: state.isDetecting ? Colors.red : Colors.white),
             ),
             iconSize: 50,
           ),

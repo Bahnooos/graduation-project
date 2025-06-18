@@ -13,7 +13,7 @@ class FlutterVisionService {
     try {
       await _vision.loadYoloModel(
         labels: 'assets/tfLite/labels.txt',
-        modelPath: 'assets/tfLite/best2_float32.tflite',
+        modelPath: 'assets/tfLite/Final_Model.tflite',
         modelVersion: "yolov8",
         numThreads: 2,
         useGpu: true,
@@ -26,7 +26,7 @@ class FlutterVisionService {
 
   Future<List<Map<String, dynamic>>> detectObjects(CameraImage image) async {
     if (!_isModelLoaded) await loadModel();
-    
+
     try {
       return await _vision.yoloOnFrame(
         bytesList: image.planes.map((plane) => plane.bytes).toList(),

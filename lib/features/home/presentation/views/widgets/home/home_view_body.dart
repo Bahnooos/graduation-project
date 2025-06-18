@@ -3,7 +3,6 @@ import 'package:graduation_project/core/routes/routes.dart';
 import 'package:graduation_project/core/utils/app_color.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/navigation_home/custom_bottom_navigation_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -24,14 +23,15 @@ class HomeViewBody extends StatelessWidget {
               height: 1,
             ),
           ),
-          Text(
-              'Transform your driving experience with real-time AI-powered road insights. Stay safe, stay aware start tracking now!',
+          Text('Transform your driving experience with real-time AI-powered road insights. Stay safe, stay aware start tracking now!',
               style: Styles.latoBold16.copyWith(
                 color: AppColor.textBlackColor,
                 height: 1.3,
               )),
           CustomButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, Routes.liveTracking);
+            },
             text: 'Start Tracking',
           ),
         ],

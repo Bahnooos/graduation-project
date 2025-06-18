@@ -1,7 +1,8 @@
 Car
+Person
+Speed 100
+Speed 120
+Speed 80
 Stop Sign
 Traffic Light
-person
-speed 100
-speed 120
-speed 80
+Unknown
